@@ -1,0 +1,38 @@
+.vc_card_container {
+    width: 300px;
+    height: 400px;
+    background-color: #FFF;
+    border: rgba(117,117,117,.2) 1px solid;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 15px 0;
+    transition: all .4s;
+}
+.vc_card_container:hover {
+    box-shadow: 0px 4px 25.38px 1.68px rgba(48, 52, 60, 0.06);
+}
+.vc_card_img {
+    width: 150px;
+    height: 150px;
+    background-color: #F3F7FF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+}
+.vc_card_img>img {
+    width: 80px;
+}
+.vc_card_title {
+    color: #373737;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 40px 0;
+}
+.vc_card_text {
+    text-align: center;
+    color: #787878;
+    line-height: 30px;
+}

@@ -1,0 +1,19 @@
+.sn_btn {
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+    background: #FFF;
+    border-radius: 100%;
+    transition: all .3s;
+    color: #0061bf;
+    font-size: 22px;
+    font-weight: bold;
+    border: rgba(117,117,117,.2) 1px solid;
+}
+.sn_btn:hover {
+    box-shadow: 0px 4px 25.38px 1.68px rgba(48, 52, 60, 0.06);
+}

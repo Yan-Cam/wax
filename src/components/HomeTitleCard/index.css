@@ -1,0 +1,43 @@
+.htcard_container {
+    width: 220px;
+    height: 500px;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    padding: 0 50px ;
+    cursor: pointer;
+    transition: all .5s;
+    margin: 10px 0;
+}
+.htcard_container:hover {
+    box-shadow: 0px 4px 25.38px 1.62px rgba(48, 52, 60, 0.06)
+}
+.htcard_container>.htcard_img>img {
+    width: 80px;
+    height: 80px;
+}
+.htcard_title {
+    margin-top: 50px;
+    color: #373737;
+    font-size: 20px;
+    font-weight: bold;
+}
+.htcard_text {
+    margin-top: 50px;
+    color: #969696;
+    font-size: 16px;
+    text-align: left;
+    line-height: 25px;
+}
+.htcard_img {
+    margin-top: 80px;
+    width: 120px;
+    height: 120px;
+    border-radius: 100%;
+    background-color: #F3F7FF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

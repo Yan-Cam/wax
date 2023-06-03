@@ -1,0 +1,21 @@
+.banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    overflow: hidden;
+}
+.banner_text {
+    font-size: 65px;
+    color: #FFF;
+    font-weight: bold;
+    margin-left: 75px;
+}
+.banner>img {
+    width: 100%;
+}
+@keyframes bannerscale {
+    0% {scale: 1.3;}
+    100%{scale: 1;}
+}

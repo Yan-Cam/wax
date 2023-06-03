@@ -1,0 +1,95 @@
+.cac_container {
+    width: 350px;
+    height: 420px;
+    display: flex;
+    flex-direction: column;
+    background-color: #FFF;
+    padding: 40px 30px;
+    transition: all .3s;
+    position: relative;
+    margin:1% 0;
+    margin-left: 35px;
+}
+
+.cac_container:hover {
+    box-shadow: 0px 4px 25.38px 1.62px rgba(48, 52, 60, 0.06);
+}
+
+.cac_container:hover>.cac_title {
+    margin-top: -80px;
+}
+
+.cac_container:hover>.cac_content {
+    opacity: 0;
+    height: 0;
+}
+
+.cac_container:hover>.cac_more {
+    opacity: 1;
+    height: 200px;
+}
+
+.cac_container:hover>.cac_mark {
+    opacity: 1;
+}
+
+.cac_title {
+    padding: 40px 0 30px 0;
+    font-size: 30px;
+    font-weight: bold;
+    color: #373737;
+    transition: all .4s;
+    background-color: #FFF;
+}
+
+.cac_icon>img {
+    width: 80px;
+}
+
+.cac_content {
+    max-height: 200px;
+    display: flex;
+    flex-direction: column;
+    transition: all .5s;
+    opacity: 1;
+    background: #FFF;
+}
+
+.cac_item {
+    font-size: 20px;
+    color: #959595;
+    margin: 15px 0;
+}
+
+.cac_more {
+    height: 0;
+    opacity: 0;
+    background: #FFF;
+    overflow: hidden;
+}
+
+.cac_more_item {
+    color: #959595;
+    font-size: 15px;
+    margin: 10px 0;
+}
+
+.cac_mark {
+    position: absolute;
+    width: 40px;
+    height: 4px;
+    background-color: #0060bf;
+    top: 0;
+    left: 40px;
+    opacity: 0;
+    transition: all .4s;
+}
+
+.learn_more {
+    color: #959595;
+    font-size: 16px;
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    cursor: pointer;
+}

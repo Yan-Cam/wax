@@ -1,0 +1,40 @@
+.sol_navigation {
+    width: 98%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+.sol_title {
+    width: 12.5%;
+    min-width: 12.5%;
+    text-align: center;
+    height: 40px;
+    color: #FFF;
+    line-height: 40px;
+    font-weight: bold;
+    background-color: #0061bf;
+}
+.sol_item_container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+.sol_item {
+   height: 40px;
+   width: 12.5%;
+   line-height: 40px;
+   min-width: 100px;
+   text-align: center;
+   cursor: pointer;
+   transition: all .3s;
+   color: #373737;
+}
+.sol_item:hover {
+    color: #0061bf;
+}
+.active {
+    color: #0061bf;
+}

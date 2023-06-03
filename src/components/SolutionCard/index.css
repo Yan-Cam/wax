@@ -1,0 +1,62 @@
+.sol_card {
+    width: 340px;
+    height: 240px;
+    background: #FFF;
+    display: flex;
+    flex-direction: column;
+    padding: 80px 40px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border: rgba(117,117,117,.2) 1px solid;
+    margin: 1%;
+}
+
+.sol_card:hover>.solc_img {
+    height: 400px;
+    -webkit-filter: blur(5px);
+    filter: blur(5px);
+}
+.sol_card:hover>.solc_text {
+    color: #FFF;
+}
+.sol_card:hover>.solc_title {
+    color: #FFF;
+}
+.sol_card:hover>.solc_more {
+    color: #FFF;
+}
+.solc_title {
+    font-size: 25px;
+    font-weight: bold;
+    color: #373737;
+    margin-bottom: 15px;
+    z-index: 1;
+    transition: all .4s;
+}
+
+.solc_text {
+    font-size: 16px;
+    z-index: 1;
+    color: #373737;
+    line-height: 30px;
+    transition: all .4s;
+}
+
+.solc_img {
+    object-fit: cover;
+    position: absolute;
+    width: 420px;
+    height: 100px;
+    bottom: 0;
+    left: 0;
+    transition: all .4s;
+}
+
+.solc_more {
+    position: absolute;
+    left: 40px;
+    bottom: 130px;
+    color: #0061bf;
+    transition: all .4s;
+}

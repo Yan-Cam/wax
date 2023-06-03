@@ -1,0 +1,22 @@
+.about_container {
+    width: 90%;
+    margin: 0 auto;
+
+}
+.values_cards {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.timeline_container {
+    width: 100%;
+    margin: 0 auto;
+    background: #FFF;
+}
+.parter_container {
+    width: 90%;
+    display: flex;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}

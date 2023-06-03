@@ -1,0 +1,24 @@
+.t_title {
+    margin: 80px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.title_t {
+    color: #373737;
+    font-weight: bold;
+    font-size: 40px;
+}
+.text_t {
+    margin-top: 15px;
+    color: #9A9A9B;
+    font-weight: bold;
+    font-size: 25px;
+}
+.line {
+    margin-top: 15px;
+    width: 100px;
+    height: 2px;
+    background-color: #0061bf;
+}

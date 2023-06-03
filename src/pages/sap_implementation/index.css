@@ -1,0 +1,32 @@
+.si_container {
+    margin-top: 80px;
+    width: 100%;
+}
+.team_container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+}
+.team_container>div {
+    margin: 10px 80px;
+}
+.team_text {
+    max-width: 600px;
+    min-width: 600px;
+    color: #757575;
+    line-height: 30px;
+}
+.overview_container>img {
+    width: 90%;
+    margin: 0 5%;
+}
+.capability_container {
+    margin: 0 auto;
+    width: 90%;
+    display: flex;
+    align-items: flex-start;
+
+    flex-wrap: wrap
+}

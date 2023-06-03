@@ -1,0 +1,51 @@
+.navigationBar {
+    z-index: 999;
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all .5s;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.navigationBar:hover {
+    background-color: #fff;
+    color: #373737 ;
+}
+.logo {
+    margin-left: 70px;
+    font-weight: bolder;
+    font-size: 50px;
+    background: none;
+    cursor: pointer;
+}
+.topMenu {
+    margin-right: 70px;
+    display: flex;
+    height: inherit;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+.topMenu>.tmItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 144px;
+    height: 70px;
+    cursor: pointer;
+} 
+.marker {
+    position: absolute;
+    width: 0;
+    height: 0;
+    background-color: #0061bf;
+    top: 0;
+    left: 40px;
+    transition: all .6s;
+}
+NavLink {
+    text-decoration: none;
+}
