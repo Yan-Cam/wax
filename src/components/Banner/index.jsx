@@ -10,10 +10,11 @@ export default function Banner(props) {
     setLineHeight(`${e.target.offsetHeight}px`)
     setOpacity('1')
   }
+  const maxWidth = document.documentElement.clientWidth
   return (
     <Fragment>
       <div className='banner'>
-        <img onLoad={handleImgLoaded} className='banner_img' style={{ animation: content.isAnima ? 'bannerscale 8s ease both' : '' }} src={content.src} alt="banner" />
+        <img onLoad={handleImgLoaded} className='banner_img' style={{ animation: content.isAnima ? 'bannerscale 8s ease both' : '',width:maxWidth }} src={content.src} alt="banner" />
       </div>
       <div style={{height,lineHeight,opacity}} className='banner_text'>{content.text}</div>
     </Fragment>

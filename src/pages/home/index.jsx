@@ -17,9 +17,9 @@ export default function Home() {
         }
     }
     const banner = {
-        text:'数字化服务的领导者',
-        src:'https://www.itl.com.cn/Public/Uploads/uploadfile/images/20210930/bannershouye-PCduan-944.jpg',
-        isAnima:true
+        text: '数字化服务的领导者',
+        src: 'https://www.itl.com.cn/Public/Uploads/uploadfile/images/20210930/bannershouye-PCduan-944.jpg',
+        isAnima: true
     }
     const titContents = [
         {
@@ -38,7 +38,7 @@ export default function Home() {
     ]
     const hmtContents = [
         {
-            src: 'home_title1.png',
+            src:  'home_title1.png',
             title: 'SAP BW/4 HANA',
             text: 'SAP1 BW/4HANA 提供先进的数据建模和治理功能、高效的解决方案开发功能、现代化的用户体验，以及卓越的灵活性。'
         },
@@ -73,19 +73,19 @@ export default function Home() {
             text: '惟昇信息提供高科技行业解决方案，提供基于高科技行业特性的全价值链管理的集成解决方案。                                                '
         },
         {
-            iconSrc: 'hg.svg',
+            iconSrc:'hg.svg',
             imgSrc: 'https://www.itl.com.cn/Public/Uploads/uploadfile/images/20210930/huagong.jpg',
             title: '化工',
             text: '惟昇信息化工行业解决方案是一套完整的综合性解决方案，为企业提供丰富的信息、增强的可靠性和特定行业功能。                                                '
         },
         {
-            iconSrc: 'qclbj.svg',
+            iconSrc:'qclbj.svg',
             imgSrc: 'https://www.itl.com.cn/Public/Uploads/uploadfile/images/20210930/qichelingbujian.jpg',
             title: '汽车零部件',
             text: '惟昇信息汽车零部件解决方案，帮助汽车零部件行业有效加快数字化转型、提升产品推陈出新效率、提升产品性能和安全性，扩大客户规模。                                                '
         },
         {
-            iconSrc: 'xfp.svg',
+            iconSrc:'xfp.svg',
             imgSrc: 'https://www.itl.com.cn/Public/Uploads/uploadfile/images/20210930/xiaofeipinjilingshou.jpg',
             title: '消费品',
             text: '惟昇信息消费品行业解决方案，助力企业运筹帷幄、把握商机，利用数字化平台突破消费者、产品、终端、和物流的核心瓶颈。                                                '
@@ -118,14 +118,14 @@ export default function Home() {
             logoDesc: '电力能源'
         },
         {
-            iconSrc: 'fjj.svg',
+            iconSrc:'fjj.svg',
             sucText: '梦牌卫浴是一家专注于卫浴及配套产品的OEM和ODM工作。坚持以质量取胜，不断完善生产工艺及品质管控，为全球用户提供舒适、便捷、耐用的卫浴产品以及愉悦的生活体验。',
             logoSrc: 'https://www.itl.com.cn/Public/Uploads/uploadfile/images/20210929/nl02-981.png',
             logoName: '梦牌卫浴',
             logoDesc: '泛家居'
         },
         {
-            iconSrc: 'hg.svg',
+            iconSrc:'hg.svg',
             sucText: '南方泵业系全国较早研发并规模化生产不锈钢冲压焊接离心泵企业，是目前国内不锈钢冲压焊接离心泵领域专业生产厂家之一。产品广泛应用于增压、工业、生活供水、空调水循环、供暖、消防系统、地下水抽取、污水废水处理、化工行业和海水淡化等诸多领域。',
             logoSrc: 'https://www.itl.com.cn/Public/Uploads/uploadfile/images/20210929/nl03-39.png',
             logoName: '南方泵业',
@@ -134,7 +134,7 @@ export default function Home() {
     ]
     return (
         <Fragment>
-            <Banner content={banner}/>
+            <Banner content={banner} />
             <div style={{ animation }} className='home_title'>
                 <div>数字经济时代到来，企业数字化该如何转型？</div>
                 <div>惟昇信息科技（武汉）有限公司梳理总结了新型中国企业管理上云之路的关键要点、多样化实施路径与未来发展趋势。</div>
@@ -156,7 +156,7 @@ export default function Home() {
                     })
                 }
             </div>
-            <div className='mission'>
+            <div style={{backgroundImage:`url(${require('../../assets/yj.webp')})`}} className='mission'>
                 <div>
                     我们的使命与愿景
                 </div>
@@ -170,8 +170,8 @@ export default function Home() {
             </div>
             <Title content={titContents[2]} />
             <div className='about'>
-                <img className='a_img1' alt='xx' src='gywm_half.jpg' />
-                <img className='a_img2' alt='xx' src='gywm.jpg' />
+                <img className='a_img1' alt='xx' src={require('../../assets/'+'gywm_half.jpg')}/>
+                <img className='a_img2' alt='xx' src={require('../../assets/'+'gywm.jpg')} />
                 <div className='ab_text'>
                     <div className='ab_cname'>惟昇信息科技</div>
                     <div className='ab_ctext'>
@@ -183,7 +183,7 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-                
+
         </Fragment>
     )
 }

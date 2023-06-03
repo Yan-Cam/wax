@@ -38,7 +38,7 @@ export default function SolutionSwiper(props) {
                         return <SwiperSlide key={index}> <div className='sw_item'>
                             <div className='sw_left'>
                                 <div className='title'>
-                                    <img src={item.iconSrc} alt="ss" />
+                                    <img src={require('../../assets/'+item.iconSrc)} alt="ss" />
                                     <div className='title_text'>
                                         {item.title}
                                     </div>

@@ -7,7 +7,7 @@ export default function HomeTitleCard(props) {
             <div className='htcard_container'>
                 <div className='htcard_img'>
                     <img
-                        src={content.src}
+                        src={require('../../assets/'+content.src)}
                         alt='图标'
                     />
                 </div>

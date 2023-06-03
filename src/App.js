@@ -10,8 +10,9 @@ import cases from './pages/cases'
 import about from './pages/about'
 import join from './pages/join'
 function App() {
+  const allWidth = document.documentElement.clientWidth
   return (
-      <div className="App">
+      <div style={{width:allWidth}} className="App">
         <Header />
         <Switch>
           <Route path={'/home'} component={Home}/>

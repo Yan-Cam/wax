@@ -1,6 +1,6 @@
 .vc_card_container {
-    width: 300px;
-    height: 400px;
+    width: 250px;
+    height: 350px;
     background-color: #FFF;
     border: rgba(117,117,117,.2) 1px solid;
     padding: 50px;
@@ -14,8 +14,8 @@
     box-shadow: 0px 4px 25.38px 1.68px rgba(48, 52, 60, 0.06);
 }
 .vc_card_img {
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     background-color: #F3F7FF;
     display: flex;
     align-items: center;
@@ -23,15 +23,16 @@
     border-radius: 100%;
 }
 .vc_card_img>img {
-    width: 80px;
+    width: 50px;
 }
 .vc_card_title {
     color: #373737;
-    font-size: 30px;
+    font-size: 22px;
     font-weight: bold;
     margin: 40px 0;
 }
 .vc_card_text {
+    font-size: 16px;
     text-align: center;
     color: #787878;
     line-height: 30px;

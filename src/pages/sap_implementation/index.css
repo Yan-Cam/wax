@@ -5,7 +5,7 @@
 .team_container {
     width: 100%;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: flex-start;
     justify-content: center;
 }
@@ -13,8 +13,7 @@
     margin: 10px 80px;
 }
 .team_text {
-    max-width: 600px;
-    min-width: 600px;
+    width: 550px;
     color: #757575;
     line-height: 30px;
 }
@@ -27,6 +26,6 @@
     width: 90%;
     display: flex;
     align-items: flex-start;
-
-    flex-wrap: wrap
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
 }

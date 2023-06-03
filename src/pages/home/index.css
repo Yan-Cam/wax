@@ -41,7 +41,6 @@
     100%{opacity: 1;margin-top: 80px;}
 }
 .mission {
-    background-image: url('../../../public/yj.webp');
     width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -81,7 +80,7 @@
 .about {
     width: 100%;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
 }
 .about>img:nth-child(1) {
@@ -94,8 +93,8 @@
     margin-left: 60px;
 }
 .ab_text {
-    margin-left: 250px;
-    max-width: 400px;
+    margin-left: 200px;
+    width: 400px;
 }
 .ab_cname {
     font-size: 35px;
