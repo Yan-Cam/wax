@@ -6,7 +6,7 @@ export default function CapabilityCard(props) {
         <Fragment>
             <div className='cac_container'>
                 <div className='cac_mark'></div>
-                <div className='cac_icon'><img src={content.src} alt="ss" /></div>
+                <div className='cac_icon'><img src={'https://yan-cam.github.io/wax/'+content.src} alt="ss" /></div>
                 <div className='cac_title'>{content.title}</div>
                 <div className='cac_content'>
                     {content.cacContent.map((item, index) => {

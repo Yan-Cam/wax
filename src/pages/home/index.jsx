@@ -156,7 +156,7 @@ export default function Home() {
                     })
                 }
             </div>
-            <div style={{backgroundImage:`url(${require('../../assets/yj.webp')})`}} className='mission'>
+            <div style={{backgroundImage:`url('https://yan-cam.github.io/wax/yj.webp')`}} className='mission'>
                 <div>
                     我们的使命与愿景
                 </div>
@@ -170,8 +170,8 @@ export default function Home() {
             </div>
             <Title content={titContents[2]} />
             <div className='about'>
-                <img className='a_img1' alt='xx' src={require('../../assets/'+'gywm_half.jpg')}/>
-                <img className='a_img2' alt='xx' src={require('../../assets/'+'gywm.jpg')} />
+                <img className='a_img1' alt='xx' src='https://yan-cam.github.io/wax/gywm_half.jpg'/>
+                <img className='a_img2' alt='xx' src='https://yan-cam.github.io/wax/gywm.jpg' />
                 <div className='ab_text'>
                     <div className='ab_cname'>惟昇信息科技</div>
                     <div className='ab_ctext'>

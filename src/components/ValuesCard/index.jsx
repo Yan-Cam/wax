@@ -6,7 +6,7 @@ export default function ValuesCard(props) {
     <Fragment>
         <div className='vc_card_container'>
             <div className='vc_card_img'>
-                <img src={content.src} alt="" />
+                <img src={require('../../assets/'+content.src)} alt="" />
             </div>
             <div className='vc_card_title'>{content.title}</div>
             <div className='vc_card_text'>{content.text}</div>

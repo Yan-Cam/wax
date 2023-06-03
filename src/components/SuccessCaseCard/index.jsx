@@ -5,7 +5,7 @@ export default function SuccessCaseCard(props) {
     return (
     <Fragment>
         <div className='suc_container'>
-            <img alt='xx' className='suc_icon' src={require('../../assets/'+content.iconSrc)}/>
+            <img alt='xx' className='suc_icon' src={'https://yan-cam.github.io/wax/'+content.iconSrc}/>
             <div className='suc_text'>
             {content.sucText}
             </div>

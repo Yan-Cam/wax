@@ -92,8 +92,8 @@ export default function About() {
             <div className='about_container'>
                 <Title content={titles[0]} />
                 <div className='about'>
-                    <img alt='xx' src='gywm_half.jpg' />
-                    <img alt='xx' src='gywm.jpg' />
+                    <img alt='xx' src='https://yan-cam.github.io/wax/gywm_half.jpg' />
+                    <img alt='xx' src='https://yan-cam.github.io/wax/gywm.jpg' />
                     <div className='ab_text'>
                         <div className='ab_cname'>惟昇信息科技</div>
                         <div className='ab_ctext'>
