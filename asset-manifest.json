@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "./static/css/main.69613b79.css",
-    "main.js": "./static/js/main.9c5c09ec.js",
+    "main.css": "./static/css/main.b0278968.css",
+    "main.js": "./static/js/main.28b40d44.js",
+    "static/media/telephone.png": "./static/media/telephone.fe166284e697c508cb5d.png",
     "index.html": "./index.html",
-    "main.69613b79.css.map": "./static/css/main.69613b79.css.map",
-    "main.9c5c09ec.js.map": "./static/js/main.9c5c09ec.js.map"
+    "main.b0278968.css.map": "./static/css/main.b0278968.css.map",
+    "main.28b40d44.js.map": "./static/js/main.28b40d44.js.map"
   },
   "entrypoints": [
-    "static/css/main.69613b79.css",
-    "static/js/main.9c5c09ec.js"
+    "static/css/main.b0278968.css",
+    "static/js/main.28b40d44.js"
   ]
 }
