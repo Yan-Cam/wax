@@ -14,46 +14,46 @@ export default function ModelAdivice(props) {
   const industry = useRef('')
   const budget = useRef('')
   const message = useRef('')
-  useEffect(()=>{
-    document.documentElement.addEventListener('wheel', handleWheel, {passive:false})
+  useEffect(() => {
+    document.documentElement.addEventListener('wheel', handleWheel, { passive: false })
   })
   const handleClickClose = () => {
     setVisibility('hidden')
     getShow(false)//同步父子组件状态，因为在子组件里也可以取消模态框
-    document.documentElement.removeEventListener('wheel', handleWheel, {passive:false})
+    document.documentElement.removeEventListener('wheel', handleWheel, { passive: false })
   }
   const handleWheel = function (e) {
     e.preventDefault()
   }
-  const handleSubClick = ()=> {
-    if(username.current.value !== "" && phone.current.value !== "" && company.current.value !== "" && address.current.value !== "" && industry.current.value !== ""){
+  const handleSubClick = () => {
+    if (username.current.value !== "" && phone.current.value !== "" && company.current.value !== "" && address.current.value !== "" && industry.current.value !== "") {
       const content = `联系人姓名：${username.current.value}联系电话：${phone.current.value}公司名称：${company.current.value}所在行业：${industry.current.value}公司所在地：${address.current.value}预算：${budget.current.value}邮箱：${email.current.value}咨询信息：${message.current.value}`
 
       axios.post("http://www.pushplus.plus/send", {
-        "token":"97551d80d7d24e9f99d928154e90184c",
-        "title":"标题",
-        "content":content,
-        "topic":"00155",
-        "template":"json"
+        "token": "97551d80d7d24e9f99d928154e90184c",
+        "title": "标题",
+        "content": content,
+        "topic": "00155",
+        "template": "json"
       }).then((response) => {
-        if(response.data.code !== 200) {
-          alert('异常：'+response.data.msg)
+        if (response.data.code !== 200) {
+          alert('异常：' + response.data.msg)
           setVisibility('hidden')
           getShow(false)//同步父子组件状态，因为在子组件里也可以取消模态框
         } else {
           alert('提交成功！')
         }
       }).catch((err) => {
-        alert('提交错误，请检查网络环境或直接电话联系'+err)
+        alert('提交错误，请检查网络环境或直接电话联系' + err)
         setVisibility('hidden')
         getShow(false)//同步父子组件状态，因为在子组件里也可以取消模态框
       })
-  
+
 
     } else {
       alert("有必填项为空，请填写完整后再提交。")
     }
-  } 
+  }
   return (
     <Fragment>
       <div style={{ visibility }} className='model_container'>
@@ -63,7 +63,7 @@ export default function ModelAdivice(props) {
               <div>用技术和创新</div>
               <div>驱动企业数字化转型</div>
             </div>
-            <img src="call.png" alt="dd" />
+            <img src="https://yan-cam.github.io/wax/call.png" alt="dd" />
           </div>
           <div className='adv_form'>
             <div className='adv_form_title'>
