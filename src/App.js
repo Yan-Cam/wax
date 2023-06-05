@@ -21,7 +21,7 @@ function App() {
     {
       src:'comment.png',
       texts:['留言咨询'],
-      tag:''
+      tag:'showModel'
     },
     {
       src:'top.png',

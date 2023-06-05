@@ -1,5 +1,5 @@
 .navigationBar {
-    z-index: 999;
+    z-index: 5;
     min-height: 70px;
     display: flex;
     align-items: center;

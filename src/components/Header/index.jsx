@@ -89,6 +89,7 @@ export default function Header() {
   }
   const handleClickLogo = ()=> {
     history.push('/home')
+    document.documentElement.scrollTop = document.body.scrollTop = 0;
   }
   return (
     <Fragment>
