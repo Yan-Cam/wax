@@ -5,6 +5,7 @@ import SolutionCard from '../../components/SolutionCard'
 import Title from '../../components/Title'
 import './index.css'
 export default function Solution() {
+    const [animation1] = useState("showSolution 2s ease both")
     const snContents = [
         {
             title:'行业',
@@ -108,8 +109,8 @@ export default function Solution() {
     return (
     <Fragment>
         <Banner content={banner}/>
+        <div style={{animation:animation1}} className='sol_container'>
         <Title content={title}/>
-        <div className='sol_container'>
             <div className='sol_navigation_container'>
                 <SolutionNavigation getClassify={getClassify} key={0} content={snContents[0]} />
                 <div className='sol_naigation_hr'></div>

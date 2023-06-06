@@ -16,14 +16,20 @@
     font-weight: bold;
     font-size: 15px;
 }
+.home_swiper {
+    opacity: 0;
+}
+.home_success {
+    opacity: 0;
+}
 .home_cards {
     display: flex;
-    width: 80%;
+    width: 90%;
     height: auto;
     margin: 0 auto;
     margin-top: 50px;
-    flex-wrap: wrap;
-    justify-content: space-between
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
 }
 .suc_cards {
     width: 100%;
@@ -36,9 +42,25 @@
     justify-content: space-between;
     box-sizing: border-box;
 }
-@keyframes show {
-    0%{opacity: 0;margin-top: 180px;}
+@keyframes showHomeTitle {
+    0%{opacity: 0;margin-top: 150px;}
     100%{opacity: 1;margin-top: 80px;}
+}
+@keyframes showSwiper {
+    0%{opacity: 0;margin-top: 150px;}
+    100%{opacity: 1;margin-top: 50px;}
+}
+@keyframes showSus {
+    0%{opacity: 0;margin-top: 150px;}
+    100%{opacity: 1;margin-top: 80px;}
+}
+@keyframes showMission {
+    0%{opacity: 0}
+    100%{opacity: 1}
+}
+@keyframes showAbout {
+    0%{opacity: 0;margin-top: 150px;}
+    100%{opacity: 1;margin-top: 0px;}
 }
 .mission {
     width: 100%;
@@ -49,6 +71,7 @@
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
+    opacity: 0;
 }
 .mission>div {
     margin-left: 150px;
@@ -76,6 +99,9 @@
     line-height: 30px;
     color: #787878;
     max-width: 400px;
+}
+.home_about {
+    opacity: 0;
 }
 .about {
     width: 100%;

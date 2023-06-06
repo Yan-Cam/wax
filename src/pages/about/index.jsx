@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState, useEffect } from 'react'
 import './index.css'
 import Banner from '../../components/Banner'
 import Title from '../../components/Title'
@@ -6,6 +6,24 @@ import ValuesCard from '../../components/ValuesCard'
 import TimeLine from '../../components/TimeLine'
 import CaseCard from '../../components/CaseCard'
 export default function About() {
+    const [animation1] = useState("showAbout 2s ease both")
+    const [animation2, setAnimation2] = useState("")
+    const [animation3, setAnimation3] = useState("")
+    const [animation4, setAnimation4] = useState("")
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll)
+    })
+    const handleScroll = () => {
+        if (document.documentElement.scrollTop >= 600) {
+            setAnimation2('showValues 2s ease both')
+        }
+        if (document.documentElement.scrollTop >= 1400) {
+            setAnimation3('showTimeLine 2s ease both')
+        }
+        if (document.documentElement.scrollTop >= 2000) {
+            setAnimation4('showpartner 2s ease both')
+        }
+    }
     const banner = {
         text: '关于惟昇',
         src: 'https://www.itl.com.cn/Public/Uploads/uploadfile/images/20211223/guanyuitl.jpg',
@@ -48,8 +66,8 @@ export default function About() {
     ]
     const tlContents = [
         {
-            year:2022,
-            list:[
+            year: 2022,
+            list: [
                 '2022年惟昇信息员工增加，步入正轨',
                 '进入SAP实施、软件应用开发服务等高端信息技术服务领域',
                 '成功完成海外项目',
@@ -62,8 +80,8 @@ export default function About() {
             ]
         },
         {
-            year:2023,
-            list:[
+            year: 2023,
+            list: [
                 '2023年惟昇信息成立',
                 '进入SAP实施、软件应用开发服务等高端信息技术服务领域',
                 '成功完成海外项目',
@@ -78,51 +96,59 @@ export default function About() {
     ]
     const prContents = [
         {
-            src:'https://www.itl.com.cn/Public/Uploads/uploadfile/images/20210929/01-726.jpg',
-            name:'SAP合作伙伴'
+            src: 'https://www.itl.com.cn/Public/Uploads/uploadfile/images/20210929/01-726.jpg',
+            name: 'SAP合作伙伴'
         },
         {
-            src:'https://www.itl.com.cn/Public/Uploads/uploadfile/images/20210929/03-482.jpg',
-            name:'腾讯云合作伙伴'
+            src: 'https://www.itl.com.cn/Public/Uploads/uploadfile/images/20210929/03-482.jpg',
+            name: '腾讯云合作伙伴'
         }
     ]
     return (
         <Fragment>
             <Banner content={banner} />
             <div className='about_container'>
-                <Title content={titles[0]} />
-                <div className='about'>
-                    <img alt='xx' src='https://yan-cam.github.io/wax/gywm_half.jpg' />
-                    <img alt='xx' src='https://yan-cam.github.io/wax/gywm.jpg' />
-                    <div className='ab_text'>
-                        <div className='ab_cname'>惟昇信息科技</div>
-                        <div className='ab_ctext'>
-                            <p>惟昇信息科技（武汉）有限公司是一家以企业信息化建设为主的科技型企业，公司通过提供定制化信息服务来逐步整合企业内部大数据，并专注为企业提供各项流程服务，建立采购标准化、数字化协作流程体系，使企业受益于信息化，提升企业运作效率，降低企业运营成本。</p>
-                            <p>惟昇信息科技利用SAP，实现从企业的采购、运输、收货、分销和管理，企业全部流程管理到下级部门的全方位覆盖。</p>
-                            <p>公司专注为制造业、物流业、航空业、化工业、以及政企单位提供服务。</p>
+                <div style={{ animation: animation1 }} className='about_about'>
+                    <Title content={titles[0]} />
+                    <div className='about'>
+                        <img alt='xx' src='https://yan-cam.github.io/wax/gywm_half.jpg' />
+                        <img alt='xx' src='https://yan-cam.github.io/wax/gywm.jpg' />
+                        <div className='ab_text'>
+                            <div className='ab_cname'>惟昇信息科技</div>
+                            <div className='ab_ctext'>
+                                <p>惟昇信息科技（武汉）有限公司是一家以企业信息化建设为主的科技型企业，公司通过提供定制化信息服务来逐步整合企业内部大数据，并专注为企业提供各项流程服务，建立采购标准化、数字化协作流程体系，使企业受益于信息化，提升企业运作效率，降低企业运营成本。</p>
+                                <p>惟昇信息科技利用SAP，实现从企业的采购、运输、收货、分销和管理，企业全部流程管理到下级部门的全方位覆盖。</p>
+                                <p>公司专注为制造业、物流业、航空业、化工业、以及政企单位提供服务。</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <Title content={titles[1]} />
-                <div className='values_cards'>
+                <div style={{ animation: animation2 }} className='about_values'>
+                    <Title content={titles[1]} />
+                    <div className='values_cards'>
+                        {
+                            vcContents.map((item, index) => {
+                                return <ValuesCard content={item} key={index} />
+                            })
+                        }
+                    </div>
+                </div>
+            </div>
+            <div style={{ animation: animation3 }} className='about_timeline'>
+                <Title content={titles[2]} />
+                <div className='timeline_container'>
+                    <TimeLine contents={tlContents} />
+                </div>
+            </div>
+            <div style={{ animation: animation4 }} className='about_partner'>
+                <Title content={titles[3]} />
+                <div className='parter_container'>
                     {
-                        vcContents.map((item, index) => {
-                            return <ValuesCard content={item} key={index} />
+                        prContents.map((item, index) => {
+                            return <CaseCard key={index} content={item} />
                         })
                     }
                 </div>
-                <Title content={titles[2]} />
-            </div>
-            <div className='timeline_container'>
-                <TimeLine contents = {tlContents} />
-            </div>
-            <Title content={titles[3]}/>
-            <div className='parter_container'>
-                {
-                    prContents.map((item,index)=>{
-                        return <CaseCard key={index} content={item}/>
-                    })
-                }
             </div>
         </Fragment>
     )

@@ -1,12 +1,30 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import Title from '../../components/Title'
 import SolutionSwiper from '../../components/SolutionSwiper'
 import Banner from '../../components/Banner'
 import CapabilityCard from '../../components/CapabilityCard'
 import './index.css'
-export default function sap_implementation() {
+export default function Sap_implementation() {
+    const [animation1] = useState("showTeam 2s ease both")
+    const [animation2, setAnimation2] = useState("")
+    const [animation3, setAnimation3] = useState("")
+    const [animation4, setAnimation4] = useState("")
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll)
+    })
+    const handleScroll = () => {
+        if (document.documentElement.scrollTop >= 500) {
+            setAnimation2('showOverview 2s ease both')
+        }
+        if (document.documentElement.scrollTop >= 1500) {
+            setAnimation3('showCapability 2s ease both')
+        }
+        if (document.documentElement.scrollTop >= 2200) {
+            setAnimation4('showSwiper 2s ease both')
+        }
+    }
     const banner = {
-        text:'SAP实施服务',
+        text: 'SAP实施服务',
         src: 'https://www.itl.com.cn/Public/Uploads/uploadfile/images/20220104/SAP12.31.jpg',
         isAnima: false
     }
@@ -35,19 +53,19 @@ export default function sap_implementation() {
     const overview = { src: 'https://www.itl.com.cn/Public/Uploads/uploadfile/images/20211223/tupian1-34.png' }
     const cacContents = [
         {
-            src:'gkj.svg',
+            src: 'gkj.svg',
             title: '技术咨询',
             cacContent: ['技术资讯实施', '技术变更优化', '技术需求实现', '技术培训业务'],
             moreContent: ['平台迁移、系统升级优化', '系统安全、容灾服务', 'IT预审', '权限梳理、数据归档', 'IT预审', 'SAP GRC部署', '自动化测试', 'SAP实施', '技术培训']
         },
         {
-            src:'gkj.svg',
+            src: 'gkj.svg',
             title: '应用咨询',
             cacContent: ['业务深化推广', '业务变更优化', '开发支持优化', '业务培训业务'],
             moreContent: ['平台迁移、系统升级优化', '系统安全、容灾服务', 'IT预审', '权限梳理、数据归档', 'IT预审', 'SAP GRC部署', '自动化测试', 'SAP实施', '技术培训']
         },
         {
-            src:'gkj.svg',
+            src: 'gkj.svg',
             title: '运维咨询',
             cacContent: ['运维咨询管理', '运维体系构建应用', '运维支持', '系统运维支持'],
             moreContent: ['平台迁移、系统升级优化', '系统安全、容灾服务', 'IT预审', '权限梳理、数据归档', 'IT预审', 'SAP GRC部署', '自动化测试', 'SAP实施', '技术培训']
@@ -114,29 +132,37 @@ export default function sap_implementation() {
         <Fragment>
             <Banner content={banner} />
             <div className='si_container'>
-                <Title content={titContents[0]} />
-                <div className='team_container'>
-                    <div className='team_text'>
-                        {team.text}
+                <div style={{ animation: animation1 }} className='sapi_team'>
+                    <Title content={titContents[0]} />
+                    <div className='team_container'>
+                        <div className='team_text'>
+                            {team.text}
+                        </div>
+                        <div className='team_img'>
+                            <img src={team.src} alt="ss" />
+                        </div>
                     </div>
-                    <div className='team_img'>
-                        <img src={team.src} alt="ss" />
+                </div>
+                <div style={{ animation: animation2 }} className='sapi_overview'>
+                    <Title content={titContents[1]} />
+                    <div className='overview_container'>
+                        <img src={overview.src} alt="ss" />
                     </div>
                 </div>
-                <Title content={titContents[1]} />
-                <div className='overview_container'>
-                    <img src={overview.src} alt="ss" />
+                <div style={{ animation: animation3 }} className='sapi_capability'>
+                    <Title content={titContents[2]} />
+                    <div className='capability_container'>
+                        {
+                            cacContents.map((item, index) => {
+                                return <CapabilityCard key={index} content={item} />
+                            })
+                        }
+                    </div>
                 </div>
-                <Title content={titContents[2]} />
-                <div className='capability_container'>
-                    {
-                        cacContents.map((item, index) => {
-                            return <CapabilityCard key={index} content={item} />
-                        })
-                    }
+                <div style={{ animation: animation4 }} className='sapi_swiper'>
+                    <Title content={titContents[3]} />
+                    <SolutionSwiper contents={swContents} />
                 </div>
-                <Title content={titContents[3]} />
-                <SolutionSwiper contents={swContents} />
             </div>
         </Fragment>
     )

@@ -2,6 +2,7 @@ import React, { Fragment, useState } from 'react'
 import './index.css'
 export default function Banner(props) {
   const { content } = props
+  const [annimation1] = useState('showBannerTitle 2s ease both')
   const [height, setHeight] = useState('0px')
   const [lineHeight, setLineHeight] = useState('0px')
   const [opacity, setOpacity] = useState('0')
@@ -16,7 +17,7 @@ export default function Banner(props) {
       <div className='banner'>
         <img onLoad={handleImgLoaded} className='banner_img' style={{ animation: content.isAnima ? 'bannerscale 8s ease both' : '',width:maxWidth }} src={content.src} alt="banner" />
       </div>
-      <div style={{height,lineHeight,opacity}} className='banner_text'>{content.text}</div>
+      <div style={{height,lineHeight,opacity,animation:annimation1}} className='banner_text'>{content.text}</div>
     </Fragment>
   )
 }

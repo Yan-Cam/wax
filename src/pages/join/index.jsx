@@ -3,7 +3,9 @@ import './index.css'
 import Banner from '../../components/Banner'
 import Title from '../../components/Title'
 import PositionCard from '../../components/PositionCard'
+import { useState } from 'react'
 export default function Join() {
+    const [annimation1] = useState('showJoin 2s ease both')
     const banner = {
         text: '招贤纳士',
         src: 'https://www.itl.com.cn/Public/Uploads/uploadfile/images/20211229/zhaoxiannashi.jpg',
@@ -18,7 +20,7 @@ export default function Join() {
             position: 'SAP助理顾问（全模块可投）',
             num: '全职 | 若干',
             salary: '面议',
-            time:'2023年6月2日',
+            time: '2023年6月2日',
             respList: [
                 '工作职责',
                 '1、支持设计IT系统整体业务解决方案，辅助分析客户业务需求，规划业务管理模式，设计企业信息化整体解决方案，并帮助客户实现方案；',
@@ -40,7 +42,7 @@ export default function Join() {
             position: 'ABAP开发',
             num: '全职 | 若干',
             salary: '面议',
-            time:'2023年6月2日',
+            time: '2023年6月2日',
             respList: [
                 '工作职责',
                 '1、支持设计IT系统整体业务解决方案，辅助分析客户业务需求，规划业务管理模式，设计企业信息化整体解决方案，并帮助客户实现方案；',
@@ -62,7 +64,7 @@ export default function Join() {
             position: '实习生（PP模块）',
             num: '实习 | 若干',
             salary: '面议',
-            time:'2023年6月2日',
+            time: '2023年6月2日',
             respList: [
                 '工作职责',
                 '1、支持设计IT系统整体业务解决方案，辅助分析客户业务需求，规划业务管理模式，设计企业信息化整体解决方案，并帮助客户实现方案；',
@@ -84,7 +86,7 @@ export default function Join() {
             position: '实习生（FI模块）',
             num: '实习 | 若干',
             salary: '面议',
-            time:'2023年6月2日',
+            time: '2023年6月2日',
             respList: [
                 '工作职责',
                 '1、支持设计IT系统整体业务解决方案，辅助分析客户业务需求，规划业务管理模式，设计企业信息化整体解决方案，并帮助客户实现方案；',
@@ -106,7 +108,7 @@ export default function Join() {
             position: '实施顾问',
             num: '全职 | 若干',
             salary: '面议',
-            time:'2023年6月2日',
+            time: '2023年6月2日',
             respList: [
                 '工作职责',
                 '1、支持设计IT系统整体业务解决方案，辅助分析客户业务需求，规划业务管理模式，设计企业信息化整体解决方案，并帮助客户实现方案；',
@@ -128,7 +130,7 @@ export default function Join() {
             position: '项目经理',
             num: '全职 | 若干',
             salary: '面议',
-            time:'2023年6月2日',
+            time: '2023年6月2日',
             respList: [
                 '工作职责',
                 '1、支持设计IT系统整体业务解决方案，辅助分析客户业务需求，规划业务管理模式，设计企业信息化整体解决方案，并帮助客户实现方案；',
@@ -150,11 +152,13 @@ export default function Join() {
     return (
         <Fragment>
             <Banner content={banner} />
-            <Title content={title} />
-            <div className='join_container'>
-                {postContents.map((item,index)=>{
-                    return <PositionCard key={index} content={item}/>
-                })}
+            <div style={{animation:annimation1}} className='join_join'>
+                <Title content={title} />
+                <div className='join_container'>
+                    {postContents.map((item, index) => {
+                        return <PositionCard key={index} content={item} />
+                    })}
+                </div>
             </div>
         </Fragment>
     )

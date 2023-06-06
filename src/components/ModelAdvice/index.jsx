@@ -3,17 +3,20 @@ import { Fragment } from 'react'
 import './index.css'
 import { useEffect } from 'react'
 import axios from 'axios'
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min'
 export default function ModelAdivice(props) {
   const [visibility, setVisibility] = useState('visible')
   const { getShow } = props
-  const username = useRef('')
-  const phone = useRef('')
-  const email = useRef('')
-  const company = useRef('')
-  const address = useRef('')
-  const industry = useRef('')
-  const budget = useRef('')
-  const message = useRef('')
+  const username = useRef()
+  const phone = useRef()
+  const email = useRef()
+  const company = useRef()
+  const address = useRef()
+  const industry = useRef()
+  const budget = useRef()
+  const message = useRef()
+  const isAgree = useRef('')
+  const history = useHistory()
   useEffect(() => {
     document.documentElement.addEventListener('wheel', handleWheel, { passive: false })
   })
@@ -25,33 +28,42 @@ export default function ModelAdivice(props) {
   const handleWheel = function (e) {
     e.preventDefault()
   }
+  const handleClickPolicy = ()=> {
+    history.push('/policy')
+    setVisibility('hidden')
+    getShow(false)//同步父子组件状态，因为在子组件里也可以取消模态框
+    document.documentElement.removeEventListener('wheel', handleWheel, { passive: false })
+    document.documentElement.scrollTop = document.body.scrollTop = 0;
+  }
   const handleSubClick = () => {
-    if (username.current.value !== "" && phone.current.value !== "" && company.current.value !== "" && address.current.value !== "" && industry.current.value !== "") {
+    if (isAgree.current.checked && username.current.value !== "" && phone.current.value !== "" && company.current.value !== "" && address.current.value !== "" && industry.current.value !== "") {
       const content = `联系人姓名：${username.current.value}联系电话：${phone.current.value}公司名称：${company.current.value}所在行业：${industry.current.value}公司所在地：${address.current.value}预算：${budget.current.value}邮箱：${email.current.value}咨询信息：${message.current.value}`
-
-      axios.post("http://www.pushplus.plus/send", {
-        "token": "97551d80d7d24e9f99d928154e90184c",
-        "title": "标题",
-        "content": content,
-        "topic": "00155",
-        "template": "json"
+      axios.post("https://wxpusher.zjiecode.com/api/send/message", {
+        "appToken":"AT_7wPlrRP4ONfkOBjz1KMBFomXq1JgeYRS",
+        "content":content,
+        "contentType":1,
+        "summary":"留言提醒",
+        "uids":[
+            "UID_dv4HoC5mQOOxPSV3ipqoqDWrNZx4",
+            "UID_oWksDWNv7z6jZ6MRDbJiRilT1Vv9"
+        ],
+        "verifyPay":false
       }).then((response) => {
-        if (response.data.code !== 200) {
-          alert('异常：' + response.data.msg)
+        if (response.data.success) {
+          alert('提交成功！我们将在24小时内给您回电')
+        } else {
+          console.log(response)
+          alert('提交异常,请直接电话联系' + response.data.msg)
           setVisibility('hidden')
           getShow(false)//同步父子组件状态，因为在子组件里也可以取消模态框
-        } else {
-          alert('提交成功！')
         }
       }).catch((err) => {
         alert('提交错误，请检查网络环境或直接电话联系' + err)
         setVisibility('hidden')
         getShow(false)//同步父子组件状态，因为在子组件里也可以取消模态框
       })
-
-
     } else {
-      alert("有必填项为空，请填写完整后再提交。")
+      alert("有必填项为空，请填写完整后再提交，或者您未同意隐私政策。")
     }
   }
   return (
@@ -105,14 +117,13 @@ export default function ModelAdivice(props) {
               </div>
             </div>
             <div className='adv_form_row3'>
-              <input className='checkbox' type="checkbox" name="" id="" />
-              <span>我确认我已阅读并理解网站的隐私政策</span>
+              <input ref={isAgree} className='checkbox' type="checkbox" name="" id="" />
+              <span>我确认我已阅读并理解网站的<span onClick={handleClickPolicy} className='policy_link'>隐私政策</span></span>
             </div>
             <div onClick={handleSubClick} className='btn_sub'>确认提交</div>
           </div>
         </div>
       </div>
-
     </Fragment >
   )
 }

@@ -10,6 +10,7 @@ import solution from './pages/solution'
 import cases from './pages/cases'
 import about from './pages/about'
 import join from './pages/join'
+import policy from './pages/privacy_policy'
 function App() {
   const allWidth = document.documentElement.clientWidth
   const fbContents = [
@@ -40,6 +41,7 @@ function App() {
           <Route path={'/cases'} component={cases}/>
           <Route path={'/about'} component={about}/>
           <Route path={'/join'} component={join}/>
+          <Route path={'/policy'} component={policy}/>
           <Redirect to={'/home'}/>
         </Switch>
         <Footer />

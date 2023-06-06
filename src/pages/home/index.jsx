@@ -7,17 +7,33 @@ import SolutionSwiper from '../../components/SolutionSwiper'
 import Banner from '../../components/Banner'
 
 export default function Home() {
-    const [animation, setAnimation] = useState("")
+    const [animation1, setAnimation1] = useState("")
+    const [animation2, setAnimation2] = useState("")
+    const [animation3, setAnimation3] = useState("")
+    const [animation4, setAnimation4] = useState("")
+    const [animation5, setAnimation5] = useState("")
     useEffect(() => {
         window.addEventListener('scroll', handleScroll)
-    }, [animation])
+    })
     const handleScroll = () => {
-        if (document.documentElement.scrollTop >= 300) {
-            setAnimation('show 3s ease both')
+        if (document.documentElement.scrollTop >= 280) {
+            setAnimation1('showHomeTitle 2s ease both')
+        }
+        if (document.documentElement.scrollTop >= 900) {
+            setAnimation2('showSwiper 2s ease both')
+        }
+        if (document.documentElement.scrollTop >= 1570) {
+            setAnimation3('showSus 2s ease both')
+        }
+        if (document.documentElement.scrollTop >= 2400) {
+            setAnimation4('showMission 2s ease both')
+        }
+        if (document.documentElement.scrollTop >= 2800) {
+            setAnimation5('showAbout 2s ease both')
         }
     }
     const banner = {
-        text: '数字化服务的领导者',
+        text: '数字化服务的实践者',
         src: 'https://www.itl.com.cn/Public/Uploads/uploadfile/images/20210930/bannershouye-PCduan-944.jpg',
         isAnima: true
     }
@@ -38,7 +54,7 @@ export default function Home() {
     ]
     const hmtContents = [
         {
-            src:  'home_title1.png',
+            src: 'home_title1.png',
             title: 'SAP BW/4 HANA',
             text: 'SAP1 BW/4HANA 提供先进的数据建模和治理功能、高效的解决方案开发功能、现代化的用户体验，以及卓越的灵活性。'
         },
@@ -73,19 +89,19 @@ export default function Home() {
             text: '惟昇信息提供高科技行业解决方案，提供基于高科技行业特性的全价值链管理的集成解决方案。                                                '
         },
         {
-            iconSrc:'hg.svg',
+            iconSrc: 'hg.svg',
             imgSrc: 'https://www.itl.com.cn/Public/Uploads/uploadfile/images/20210930/huagong.jpg',
             title: '化工',
             text: '惟昇信息化工行业解决方案是一套完整的综合性解决方案，为企业提供丰富的信息、增强的可靠性和特定行业功能。                                                '
         },
         {
-            iconSrc:'qclbj.svg',
+            iconSrc: 'qclbj.svg',
             imgSrc: 'https://www.itl.com.cn/Public/Uploads/uploadfile/images/20210930/qichelingbujian.jpg',
             title: '汽车零部件',
             text: '惟昇信息汽车零部件解决方案，帮助汽车零部件行业有效加快数字化转型、提升产品推陈出新效率、提升产品性能和安全性，扩大客户规模。                                                '
         },
         {
-            iconSrc:'xfp.svg',
+            iconSrc: 'xfp.svg',
             imgSrc: 'https://www.itl.com.cn/Public/Uploads/uploadfile/images/20210930/xiaofeipinjilingshou.jpg',
             title: '消费品',
             text: '惟昇信息消费品行业解决方案，助力企业运筹帷幄、把握商机，利用数字化平台突破消费者、产品、终端、和物流的核心瓶颈。                                                '
@@ -118,14 +134,14 @@ export default function Home() {
             logoDesc: '电力能源'
         },
         {
-            iconSrc:'fjj.svg',
+            iconSrc: 'fjj.svg',
             sucText: '梦牌卫浴是一家专注于卫浴及配套产品的OEM和ODM工作。坚持以质量取胜，不断完善生产工艺及品质管控，为全球用户提供舒适、便捷、耐用的卫浴产品以及愉悦的生活体验。',
             logoSrc: 'https://www.itl.com.cn/Public/Uploads/uploadfile/images/20210929/nl02-981.png',
             logoName: '梦牌卫浴',
             logoDesc: '泛家居'
         },
         {
-            iconSrc:'hg.svg',
+            iconSrc: 'hg.svg',
             sucText: '南方泵业系全国较早研发并规模化生产不锈钢冲压焊接离心泵企业，是目前国内不锈钢冲压焊接离心泵领域专业生产厂家之一。产品广泛应用于增压、工业、生活供水、空调水循环、供暖、消防系统、地下水抽取、污水废水处理、化工行业和海水淡化等诸多领域。',
             logoSrc: 'https://www.itl.com.cn/Public/Uploads/uploadfile/images/20210929/nl03-39.png',
             logoName: '南方泵业',
@@ -135,7 +151,7 @@ export default function Home() {
     return (
         <Fragment>
             <Banner content={banner} />
-            <div style={{ animation }} className='home_title'>
+            <div style={{ animation: animation1 }} className='home_title'>
                 <div>数字经济时代到来，企业数字化该如何转型？</div>
                 <div>惟昇信息科技（武汉）有限公司梳理总结了新型中国企业管理上云之路的关键要点、多样化实施路径与未来发展趋势。</div>
                 <div className='home_cards'>
@@ -146,17 +162,21 @@ export default function Home() {
                     }
                 </div>
             </div>
-            <Title content={titContents[0]} />
-            <SolutionSwiper contents={swContents} />
-            <Title content={titContents[1]} />
-            <div className='suc_cards'>
-                {
-                    susContents.map((item, index) => {
-                        return <SuccessCaseCard key={index} content={item} />
-                    })
-                }
+            <div style={{ animation: animation2 }} className='home_swiper'>
+                <Title content={titContents[0]} />
+                <SolutionSwiper contents={swContents} />
             </div>
-            <div style={{backgroundImage:`url('https://yan-cam.github.io/wax/yj.webp')`}} className='mission'>
+            <div style={{ animation: animation3 }} className='home_success'>
+                <Title content={titContents[1]} />
+                <div className='suc_cards'>
+                    {
+                        susContents.map((item, index) => {
+                            return <SuccessCaseCard key={index} content={item} />
+                        })
+                    }
+                </div>
+            </div>
+            <div style={{ backgroundImage: `url('https://yan-cam.github.io/wax/yj.webp')`, animation: animation4 }} className='mission'>
                 <div>
                     我们的使命与愿景
                 </div>
@@ -168,22 +188,23 @@ export default function Home() {
                     惟昇信息科技（武汉）有限公司是一家致力于为企业信息化做出自己努力贡献的服务提供商，坚持以用户为中心、以应用为基础、以技术为后盾、以双赢为目的的理念为用户及合作伙伴提供专业咨询，应用软件实施及解决方案。
                 </div>
             </div>
-            <Title content={titContents[2]} />
-            <div className='about'>
-                <img className='a_img1' alt='xx' src='https://yan-cam.github.io/wax/gywm_half.jpg'/>
-                <img className='a_img2' alt='xx' src='https://yan-cam.github.io/wax/gywm.jpg' />
-                <div className='ab_text'>
-                    <div className='ab_cname'>惟昇信息科技</div>
-                    <div className='ab_ctext'>
-                        <p>惟昇信息科技（武汉）有限公司是一家以企业信息化建设为主的科技型企业，公司通过提供定制化信息服务来逐步整合企业内部大数据，并专注为企业提供各项流程服务，建立采购标准化、数字化协作流程体系，使企业受益于信息化，提升企业运作效率，降低企业运营成本。</p>
+            <div style={{ animation: animation5 }} className='home_about'>
+                <Title content={titContents[2]} />
+                <div className='about'>
+                    <img className='a_img1' alt='xx' src='https://yan-cam.github.io/wax/gywm_half.jpg' />
+                    <img className='a_img2' alt='xx' src='https://yan-cam.github.io/wax/gywm.jpg' />
+                    <div className='ab_text'>
+                        <div className='ab_cname'>惟昇信息科技</div>
+                        <div className='ab_ctext'>
+                            <p>惟昇信息科技（武汉）有限公司是一家以企业信息化建设为主的科技型企业，公司通过提供定制化信息服务来逐步整合企业内部大数据，并专注为企业提供各项流程服务，建立采购标准化、数字化协作流程体系，使企业受益于信息化，提升企业运作效率，降低企业运营成本。</p>
 
-                        <p>惟昇信息科技利用SAP，实现从企业的采购、运输、收货、分销和管理，企业全部流程管理到下级部门的全方位覆盖。</p>
+                            <p>惟昇信息科技利用SAP，实现从企业的采购、运输、收货、分销和管理，企业全部流程管理到下级部门的全方位覆盖。</p>
 
-                        <p>公司专注为制造业、物流业、航空业、化工业、以及政企单位提供服务。</p>
+                            <p>公司专注为制造业、物流业、航空业、化工业、以及政企单位提供服务。</p>
+                        </div>
                     </div>
                 </div>
             </div>
-
         </Fragment>
     )
 }

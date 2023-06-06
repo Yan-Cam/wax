@@ -5,6 +5,7 @@ import Title from '../../components/Title'
 import SolutionNavigation from '../../components/SolutionNavigation'
 import CaseCard from '../../components/CaseCard'
 export default function Cases() {
+    const [animation1] = useState("showCases 2s ease both")
     const snContent =
     {
         title: '成功案例',
@@ -102,8 +103,8 @@ export default function Cases() {
     return (
         <Fragment>
             <Banner content={banner} />
-            <Title content={title} />
-            <div className='cases_container'>
+            <div style={{animation:animation1}} className='cases_container'>
+                <Title content={title} />
                 <SolutionNavigation getClassify={getClassify} key={0} content={snContent} />
                 <div className='case_cards'>
                     {
